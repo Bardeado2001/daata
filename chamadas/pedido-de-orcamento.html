@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="seuarquivo2.css">
+    <style>
+      #inputt {
+        background-color: rgb(18, 18, 18);
+        color: aliceblue;
+        border-radius: 10px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="orcamento-div">
+      <form id="orcamento-form">
+        <h1>Pedido De Orçamento</h1>
+        <div>
+          <label for="tipo-pagina">Tipo de Página:</label><br>
+          <select id="tipo-pagina" name="tipo-pagina">
+            <option value="opcao1">Opção 1 - 1000 euros</option>
+            <option value="opcao2">Opção 2 - 1500 euros</option>
+            <option value="opcao3">Opção 3 - 2000 euros</option>
+          </select>
+        </div><br>
+
+        <div>
+          <label for="prazo-meses">Prazo em Meses:</label><br>
+          <input type="number" id="prazo-meses" name="prazo-meses" min="1" max="12"/>
+        </div><br>
+        <div>
+          <label for="separadores"><strong>Marque os separadores desejados</strong></label><br><br>
+          <input type="checkbox" class="separador" name="separadores" /> Quem somos
+          <input type="checkbox" class="separador" name="separadores" /> Onde estamos
+          <input type="checkbox" class="separador" name="separadores" /> Galeria de fotografias
+          <input type="checkbox" class="separador" name="separadores" /> eCommerce
+          <input type="checkbox" class="separador" name="separadores" /> Gestão inteira
+          <input type="checkbox" class="separador" name="separadores" /> Notícias
+          <input type="checkbox" class="separador" name="separadores" /> Redes sociais
+        </div>
+        <div>
+          <label for="orcamento-final">Orçamento Final:</label>
+          <span id="orcamento-resultado">0 euros</span><br><br>
+        </div>
+        <div>
+          <input id="inputt" type="submit" value="Calcular Orçamento" />
+        </div>
+      </form>
+    </div>
+
+    <script>
+      const form = document.getElementById("orcamento-form");
+      const tipoPagina = document.getElementById("tipo-pagina");
+      const prazoMeses = document.getElementById("prazo-meses");
+      const checkboxes = document.querySelectorAll(".separador");
+      const orcamentoResultado = document.getElementById("orcamento-resultado");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        calcularOrcamento();
+      });
+
+      form.addEventListener("change", function () {
+        calcularOrcamento();
+      });
+
+      function calcularOrcamento() {
+        const tipoPaginaValor = tipoPagina.value;
+        const prazoMesesValor = parseInt(prazoMeses.value);
+        let separadoresValor = 0;
+
+        checkboxes.forEach((checkbox) => {
+          if (checkbox.checked) {
+            separadoresValor += 400;
+          }
+        });
+
+        let orcamentoBase = 0;
+        if (tipoPaginaValor === "opcao1") {
+          orcamentoBase = 1000;
+        } else if (tipoPaginaValor === "opcao2") {
+          orcamentoBase = 1500;
+        } else if (tipoPaginaValor === "opcao3") {
+          orcamentoBase = 2000;
+        }
+
+        let orcamentoFinal = orcamentoBase;
+
+        if (prazoMesesValor > 0) {
+          const desconto = prazoMesesValor * 5;
+          orcamentoFinal -= (orcamentoBase * desconto) / 100;
+        }
+
+        orcamentoFinal += separadoresValor;
+
+        orcamentoResultado.textContent = `${orcamentoFinal} euros`;
+      }
+    </script>
+  </body>
+</html>

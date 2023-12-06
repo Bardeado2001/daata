@@ -1,0 +1,374 @@
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/** TELEMOVEL **/
+
+@media screen and (max-width: 768px) {
+
+  iframe {
+    height: 400px;
+    width: 100%;
+  }
+
+  /*NAVBAR*/
+  body {
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: rgb(0, 0, 0)
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f4f4f4;
+    color: #000000;
+    padding: 30px 0;
+    text-align: center;
+    z-index: 100;
+  }
+
+  .navbar a {
+    font-size: 12px;
+    text-decoration: none;
+    background-color: #f4f4f4;
+    padding: 0px 0;
+    color: #000000;
+    margin: 0 8px;
+  }
+
+  .navbar a:hover {
+    color: red;
+  }
+
+  .navbar a:active {
+    color: rgb(255, 0, 0);
+  }
+
+  /*INTRO DIV*/
+  /*INDICE*/
+  #indice {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    margin-top: 90px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+
+  #intro {
+    width: 88%;
+    text-align: justify;
+    margin: 0 auto;
+  }
+
+  /*DINAMIC*/
+  #dinamic {
+    width: 100%;
+    margin-top: 2px;
+  }
+
+  /*NEWS*/
+  #feed {
+    width: 100%;
+    /* Ajuste a largura conforme necessário */
+    max-height: 1200px;
+    overflow-y: scroll;
+    background-color: #f4f4f4;
+    margin: 60px auto;
+    /* Margem superior fixa e centralizando horizontalmente */
+  }
+
+  .noti {
+    padding: 10px;
+    margin: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+
+  .noti a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .notema {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  .notiimagem {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  #feed h1 {
+    position: sticky;
+    top: 0;
+    background-color: rgb(244, 244, 244);
+    padding: 10px;
+    margin: 0;
+    z-index: 1;
+  }
+
+  /* Estilização do rodapé */
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    clear: both;
+    margin: -20px;
+  }
+
+  .footer-content {
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .contact-info,
+  .social-links {
+    flex: 1;
+    text-align: center;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .contact-info p,
+  .social-links a {
+    color: #ccc;
+    text-decoration: none;
+  }
+
+  .social-links a {
+    font-size: 24px;
+    margin: 0 10px;
+  }
+
+  .social-links a:hover {
+    color: rgb(0, 64, 255);
+  }
+
+  /* Estilização do rodapé inferior */
+  .footer-bottom {
+    background-color: #222;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .footer-bottom p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+}
+
+
+/******************************************************************/
+
+
+ /*PC*/
+ @media screen and (min-width: 769px) {
+  iframe {
+    height: 600px;
+    width: 100%;
+  }
+
+  /*PC*/
+  body {
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: rgb(0, 0, 0);
+  }
+
+  /*PC*/
+  /*NAVBAR*/
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f4f4f4;
+    color: #000000;
+    padding: 30px 0;
+    text-align: center;
+    z-index: 100;
+  }
+
+  /*PC*/
+  .navbar a {
+    text-decoration: none;
+    background-color: #f4f4f4;
+    padding: 0px 0;
+
+    color: #000000;
+    margin: 0 20px;
+  }
+
+  /*PC*/
+  .navbar a:hover {
+    color: red;
+  }
+
+  /*PC*/
+  .navbar a:active {
+    color: rgb(255, 0, 0);
+  }
+
+  /*PC*/
+  /* PAGINA INICIAL */
+  #indice {
+    width: 73%;
+    height: 522px;
+    text-align: center;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    margin-top: 90px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+
+  /*PC*/
+  #intro {
+    width: 90%;
+    text-align: justify;
+    margin: 0 auto;
+  }
+
+  /*PC*/
+  /*DINAMIC*/
+  #dinamic {
+    width: 73%;
+    float: left;
+    padding-bottom: 100px;
+  }
+
+  /*PC*/
+  /*NEWS*/
+  #feed {
+    width: 25%;
+    max-height: 1200px;
+    overflow-y: auto;
+    background-color: #f4f4f4;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 60px;
+  }
+
+  /*PC*/
+  .noti {
+    padding: 10px;
+    margin: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+
+  /*PC*/
+  .noti a {
+    text-decoration: none;
+    color: black;
+  }
+
+  /*PC*/
+  .notema {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  /*PC*/
+  .notiimagem {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  /*PC*/
+  #feed h1 {
+    position: sticky;
+    top: 0;
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin: 0;
+    z-index: 1;
+  }
+
+  /*PC*/
+  footer {
+    background-color: white;
+    color: #000000;
+    padding: 20px 0;
+    width: 100%;
+    clear: both;
+    margin-top: 10px;
+    margin: -20px;
+  }
+
+  /*PC*/
+  .footer-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  /*PC*/
+  .contact-info,
+  .social-links {
+    flex: 1;
+    text-align: center;
+  }
+
+  /*PC*/
+  h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  /*PC*/
+  .contact-info p,
+  .social-links a {
+    color: #000000;
+    text-decoration: none;
+  }
+
+  /*PC*/
+  .social-links a {
+    font-size: 24px;
+    margin: 0 10px;
+  }
+
+  /*PC*/
+  .social-links a:hover {
+    color: rgb(0, 64, 255);
+  }
+
+  /*PC*/
+  .footer-bottom {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 10px 0;
+  }
+}

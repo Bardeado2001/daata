@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <link rel="stylesheet" type="text/css" href="seuarquivo2.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCu5Yv-0e-TgGW8gGsrv0ny9xfi5v2PDqc&callback=initializeMap"></script>
+    <script type="text/javascript">
+      var mapa;
+      var mostrarDireccao;
+      var servicioRota;
+
+      function initializeMap() {
+        mostrarDireccao = new google.maps.DirectionsRenderer();
+        var ponto = new google.maps.LatLng(38.62552, -9.0995751);
+        var opcoes = {
+          zoom: 12,
+          center: ponto,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+        };
+        mapa = new google.maps.Map(document.getElementById("mapa"), opcoes);
+
+        var marca = new google.maps.Marker({
+          position: ponto,
+          map: mapa,
+          title: "JANIO.GAMES",
+        });
+
+        mostrarDireccao.setMap(mapa);
+        mostrarDireccao.setPanel(document.getElementById("rota"));
+
+        servicioRota = new google.maps.DirectionsService();
+      }
+
+      function calcularRota() {
+        var partida = document.getElementById("partida").value;
+        var destino = document.getElementById("destino").value;
+        var opcoes = {
+          origin: partida,
+          destination: destino,
+          travelMode: google.maps.DirectionsTravelMode.DRIVING,
+        };
+        servicioRota.route(opcoes, function (response, status) {
+          if (status == google.maps.DirectionsStatus.OK) {
+            mostrarDireccao.setDirections(response);
+          }
+        });
+      }
+    </script>
+  </head>
+  <body onload="initializeMap()">
+    <h1>Estamos Localizados Em:</h1>
+    <div id="map-container">
+      <div id="mapa"></div>
+      <div id="rota">
+        Partida:
+        <input id="partida" type="text" value="" />
+        Destino:
+        <input id="destino" type="text" value="" />
+        <input type="button" value="Calcular Rota" onclick="calcularRota()" />
+      </div>
+    </div>
+  </body>
+</html>
